@@ -16,6 +16,8 @@ impl Msbuild {
 
     pub fn build(mut self, target: &Target, build_dir: &str) -> Result<()> {
         self.cl.push("/MP".to_owned());
+        self.cl.push("/MT".to_owned()); 
+        self.cl.push("/utf-8".to_owned());
 
         // work around https://developercommunity.visualstudio.com/t/NAN-is-no-longer-compile-time-constant-i/10688907
         let file_path = Path::new(build_dir).join("source/fitz/geometry.c");
