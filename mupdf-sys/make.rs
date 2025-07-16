@@ -168,7 +168,7 @@ impl Make {
         self.cpu(
             target,
             "neon",
-            "-mfpu=neon",
+            // "-mfpu=neon",
             "HAVE_NEON",
             Some("ARCH_HAS_NEON"),
         );
