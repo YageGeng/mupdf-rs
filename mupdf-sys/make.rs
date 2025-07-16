@@ -165,13 +165,7 @@ impl Make {
         self.cpu(target, "fma", "-mfma", "HAVE_FMA", None);
 
         // arm
-        self.cpu(
-            target,
-            "neon",
-            // "-mfpu=neon",
-            "HAVE_NEON",
-            Some("ARCH_HAS_NEON"),
-        );
+        self.cpu(target, "neon", "", "HAVE_NEON", Some("ARCH_HAS_NEON"));
     }
 
     pub fn build(mut self, target: &Target, build_dir: &str) -> Result<()> {
